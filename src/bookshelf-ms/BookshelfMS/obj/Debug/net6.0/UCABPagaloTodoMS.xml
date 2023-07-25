@@ -1,0 +1,672 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UCABPagaloTodoMS</name>
+    </assembly>
+    <members>
+        <member name="M:UCABPagaloTodoMS.Controllers.AdministradoresController.ConsultaAdmin(System.String)">
+            <summary>
+                Endpoint to consult the Administrador
+            </summary>
+            <remarks>
+                ## Description
+                    Get Administradores
+                ## Url
+                    GET /Administradores/{_username}
+            </remarks>
+            <response code="200">
+                Accepted:
+                - Operation successful.
+            </response>
+            <response code = "404" >
+                Failed:
+                - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>A list of AdminsReponse in the generic Response format</returns>
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.AdministradoresController.UpdateAdmin(UCABPagaloTodoMS.Application.Requests.AdminsRequest,System.String)">
+            <summary> 
+                Endpoint to update an Administrador
+            </summary>
+            <remarks>
+                ## Description
+                    PUT update Administrador
+                ## Url
+                    PUT /Administradores/
+            </remarks>
+            <response code="200">
+                Accepted:
+                - Operation successful.
+            </response>
+            <response code="409">
+               Failed:
+                - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>The generic Response format with the operation result</returns>
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.AdministradoresController.UpdateStatusAdmin(UCABPagaloTodoMS.Application.Requests.StatusUserRequest,System.String)">
+            <summary>
+                Endpoint to update the admin status
+            </summary>
+            <remarks>
+                ## Description
+                    PATCH update the admin status
+                ## Url
+                    PATCH /Administradores/UpdateStatusAdmin
+            </remarks>
+            <response code="200">
+                Accepted:
+                - Operation successful.
+            </response>
+            <response code="409">
+               Failed:
+                - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>The generic Response format with the operation result</returns>
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.AdministradoresController.CambioClaveAdministrador(UCABPagaloTodoMS.Application.Requests.CambioClaveUserRequest,System.String)">
+            <summary>
+                Endpoint change the administrator password
+            </summary>
+            <remarks>
+                ## Description
+                ### PATCH change the administrator password
+                ## Url
+                PATCH /Administradores/CambioClaveAdministrador
+            </remarks>
+            <response code="200">
+                Accepted:
+                - Operation successful.
+            </response>
+            <response code="409">
+               Failed:
+                - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>The generic Response format with the operation result</returns>
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.CierresController.CierreContable(System.String)">
+            <summary>
+                Endpoint to Make a Cierre
+            </summary>
+            <remarks>
+                ## Description
+                    Post Cierre
+                ## Url
+                    POST /Cierres/CierreContable
+            </remarks>
+             <paramref name="_servicio"/> (string) indicates the service that the accounting closing will be done
+            <response code="201">
+                Accepted:
+                    - Operation successful.
+            </response>
+            <response code="400">
+               Failed:
+                - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>The generic Response format with the operation result</returns>
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.ConciliacionesController.Conciliacion(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+                Endpoint to Make a Conciliacion
+            </summary>
+            <remarks>
+                ## Description
+                    Post Conciliacion
+                ## Url
+                    POST /Conciliaciones
+            </remarks>
+            <paramref name="servicio"/> (CargarConciliacionRequest) indicates the name of the conciliation file
+            <response code="201">
+                Accepted:
+                    - Operation successful.
+            </response>
+            <response code="400">
+               Failed:
+                - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>The generic Response format with the operation result</returns>
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.ConsumidoresController.ConsultaConsumidor(System.String)">
+            <summary>
+                Endpoint to consult Consumidores
+            </summary>
+            <remarks>
+                ## Description
+                    Get consumidores
+                ##Url
+                    GET /Consumidores/ConsultConsumidor
+            <paramref name="username"/> string? is an optional values, that indicates the user to be queried
+            </remarks>
+            <response code="200">
+                Accepted:
+                    - Operation successful.
+                    - If _username is null, List of all ConsumidoresResponse
+                      If _username is not null, just user's info
+            </response>
+            <response code="400">
+               Failed:
+                - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>list of ConsumidoresResponse in the generic Response format</returns>
+            
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.ConsumidoresController.AgregarConsumidor(UCABPagaloTodoMS.Application.Requests.ConsumidorRequest)">
+            <summary>
+                Endpoint to Add a Consumidor
+            </summary>
+            <remarks>
+                ## Description
+                    Post of consumidores
+                ## Url
+                    POST /Consumidores
+            </remarks>
+            <paramref name="consumidor"/>  (ConsumidorRequest) that indicates the user to be add
+            <response code="201">
+                Accepted:
+                    - Operation successful.
+            </response>
+            <response code="400">
+               Failed:
+                - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>The generic Response format with the operation result</returns>
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.ConsumidoresController.UpdateConsumidor(UCABPagaloTodoMS.Application.Requests.ConsumidorRequest,System.String)">
+            <summary>
+                Endpoint to update consumidores
+            </summary>
+            <remarks>
+                ## Description
+                    PUT of consumidores
+                ## Url
+                    PUT /Consumidores/Update
+            </remarks>
+            <paramref name="consumidor"/>  (ConsumidorRequest) that indicates the user to be updated
+            <response code="200">
+                Accepted:
+                    - Operation successful.
+            </response>
+            <response code="400">
+               Failed:
+                - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>The generic Response format with the operation result</returns>
+            
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.ConsumidoresController.UpdateStatusConsumidor(UCABPagaloTodoMS.Application.Requests.StatusUserRequest,System.String)">
+            <summary>
+                Endpoint to update the consumdor status
+            </summary>
+            <remarks>
+                ## Description
+                    Put consumidores
+                ## Url
+                    PUT /Consumidores/UpdateStatus
+            </remarks>
+            <paramref name="consumidor"/>  (StatusUserRequest) that indicates the user to be update
+            <response code="200">
+                Accepted:
+                    - Operation successful.
+            </response>
+            <response code="400">
+               Failed:
+                - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>The generic Response format with the operation result</returns>
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.ConsumidoresController.CambioClaveConsumidor(UCABPagaloTodoMS.Application.Requests.CambioClaveUserRequest,System.String)">
+            <summary>
+                Endpoint change the consumidor password
+            </summary>
+            <remarks>
+                ## Description
+                    Post change the consumidor password
+                ## Url
+                    POST /Consumidores/CambioClaveConsumidor
+            </remarks>
+            <paramref name="claveConsumidor"/> (CambioClaveUserRequest) indicated the info to change the password
+            <response code="200">
+                Accepted:
+                - Operation successful.
+            </response>
+            <response code="400">
+               Failed:
+                - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>The generic Response format with the operation result</returns>
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.ConsumidoresController.ConsultaDeudas(System.String)">
+            <summary>
+                Endpoint to consult Deudas
+            </summary>
+            <remarks>
+                ## Description
+                    Get Deudas
+                ##Url
+                    GET /Deudas/{_servicio}
+            <parameters>
+                <paramref name="servicio"/> (string) indicates the service's format to be queried
+                <paramref name="username"/> (string?) is an optional values, indicates the username to be queried
+            </parameters>
+            </remarks>
+            <response code="200">
+                Accepted:
+                    - Operation successful.
+            </response>
+            <response code="400">
+                Failed:
+                    - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>A list of DeudaResponse in the generic Response format</returns>
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.DeudasController.AgregarDeuda(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+                Endpoint to Add a Deuda
+            </summary>
+            <remarks>
+                ## Description
+                    Post Deuda
+                ## Url
+                    POST /Deudas/AñadirDeuda
+            </remarks>
+            <paramref name="deuda"/> (IFormFile) indicated the info to be add
+            <response code="201">
+                Accepted:
+                    - Operation successful.
+            </response>
+            <response code="400">
+                Failed:
+                    - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>Returns a generic Response with the result of the operation</returns>
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.DeudasController.ConsultaDeudas(System.String)">
+            <summary>
+                Endpoint to consult Deudas
+            </summary>
+            <remarks>
+                ## Description
+                    Get Deudas
+                ##Url
+                    GET /Deudas/{_servicio}
+            <parameters>
+                <paramref name="servicio"/> (string) indicates the service's format to be queried
+            </parameters>
+            </remarks>
+            <response code="200">
+                Accepted:
+                    - Operation successful.
+            </response>
+            <response code="400">
+                Failed:
+                    - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>A list of DeudaResponse in the generic Response format</returns>
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.FormatosController.AgregarFormato(UCABPagaloTodoMS.Application.Requests.FormatosRequest)">
+            <summary>
+                Endpoint to Add a Formato
+            </summary>
+            <remarks>
+                ## Description
+                    Post Formato
+                ## Url
+                    POST /Formatos/AñadirFormato
+            </remarks>
+            <paramref name="_formato"/> (FormatosRequest) indicated the info to be add
+            <response code="201">
+                Accepted:
+                    - Operation successful.
+            </response>
+            <response code="400">
+                Failed:
+                    - Operation failure, indicates the type of error and the error's reason.
+            </response>
+            <returns>Returns a generic Response with the result of the operation</returns>
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.FormatosController.ConsultaFormatos(System.String)">
+            <summary>
+                Endpoint to consult Formatos
+            </summary>
+            <remarks>
+                ## Description
+                    Get Formatos
+                ##Url
+                    GET /Formatos/{_servicio}
+            <paramref name="servicio"/> (string) that indicates the formato to be queried
+            </remarks>
+            <response code="200">
+                Accepted:
+                    - Operation successful.
+            </response>
+            <response code="400">
+                Failed:
+                    - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>A list of FormatosResponse in the generic Response format</returns>
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.FormatosController.UpdateFormato(UCABPagaloTodoMS.Application.Requests.FormatosRequest)">
+            <summary>
+                Endpoint to update Formato
+            </summary>
+            <remarks>
+                ## Description
+                    Patch Formato
+                ## Url
+                    Patch /Formatos/UpdateFormato
+            </remarks>
+            <paramref name="_servicio"/> (FormatosRequest) that indicates the formato to be update
+            <response code="200">
+                Accepted:
+                    - Operation successful.
+            </response>
+            <response code="400">
+                Failed:
+                    - Operation failure,  indicates the type of error and the error's reason.
+            </response>
+            <returns>Returns a generic Response with the result of the operation</returns>
+            
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.LoginController.LoginUsuarios(System.String,System.String)">
+            <summary>
+                Endpoint to consult the usernames
+            </summary>
+            <remarks>
+                ## Description
+                    Get usuarios
+                ## Url
+                    GET Login/{_username}/{_clave}
+            </remarks>
+            <paramref name="username"/> (string) Indicates the user to be queried
+            <paramref name="clave"/> (string) Indicates the password to be queried
+            <response code="200">
+                Accepted:
+                - Operation successful.
+            </response>
+            <response code = "400" >
+                Failed:
+                - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>list of AdminsReponse in the generic Response format</returns>
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.PagosController.AgregarPago(UCABPagaloTodoMS.Application.Requests.PagoRequest)">
+            <summary>
+                Endpoint to Add a pago
+            </summary>
+            <remarks>
+                ## Description
+                    Post pago
+                ## Url
+                    POST /Pagos/AñadirPago
+            </remarks>
+            <response code="201">
+                Accepted:
+                    - Operation successful.
+            </response>
+            <response code = "400" >
+                Failed:
+                - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>The generic Response format with the operation result</returns>
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.PagosController.ConsultarPagos(UCABPagaloTodoMS.Application.Requests.ConsultarPagosRequest)">
+            <summary>
+                Endpoint to consult Pagos
+            </summary>
+            <remarks>
+                ## Description
+                    Get Pagos
+                ##Url
+                    GET /Pagos/ConsultarPagos {_fecha1}/{_fecha2}
+            </remarks>
+            <response code="200">
+                Accepted:
+                    - Operation successful.
+                    - If _servicio is null, show all pagos.         
+            </response>
+            <response code="404">
+                Failed:
+                    - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>A list of PagoResponse in the generic Response format</returns>
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.PrestadoresController.ConsultaPrestador(System.String)">
+            <summary>
+                Endpoint to consult Prestadores
+            </summary>
+            <remarks>
+                ## Description
+                    Get prestadores
+                ##Url
+                    GET /Prestadores/ConsultPrestadores
+            <paramref name="username"/> (string) optional value, indicates the user to be queried
+            </remarks>
+            <response code="200">
+                Accepted:
+                    - Operation successful.
+                    - If _username is null, List of all PrestadoresResponse
+                      If _username is not null, just user's info
+            </response>
+            <response code = "400" >
+                Failed:
+                - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>A list of PrestadoresResponse in the generic Response format</returns>
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.PrestadoresController.AgregarPrestador(UCABPagaloTodoMS.Application.Requests.PrestadorRequest)">
+            <summary>
+                Endpoint to Add a Prestador
+            </summary>
+            <remarks>
+                ## Description
+                    Post Prestadores
+                ## Url
+                    POST /Prestadores/AñadirPrestador
+            </remarks>
+            <paramref name="prestador"/> (PrestadorRequest) optional value, indicates the user to be add
+            <response code="201">
+                Accepted:
+                    - Operation successful.
+            </response>
+            <response code="400">
+               Failed:
+                - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>The generic Response format with the operation result</returns>
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.PrestadoresController.UpdateStatusPrestador(UCABPagaloTodoMS.Application.Requests.StatusUserRequest,System.String)">
+            <summary>
+                Endpoint to change the status
+            </summary>
+            <remarks>
+                ## Description
+                    Put Prestadores
+                ## Url
+                    PUT /Prestadores/UpdateStatusPrestador
+            </remarks>
+             <paramref name="consumidor"/> (StatusUserRequest) optional value, indicates the user to be update
+            <response code="200">
+                Accepted:
+                    - Operation successful.
+            </response>
+            <response code="409">
+               Failed:
+                - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>The generic Response format with the operation result</returns>
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.PrestadoresController.CambioClavePrestador(UCABPagaloTodoMS.Application.Requests.CambioClaveUserRequest,System.String)">
+            <summary>
+                Endpoint change the password
+            </summary>
+            <remarks>
+                ## Description
+                ### Post change the password
+                ## Url
+                POST /Prestadores/CambioClavePrestador
+            </remarks>
+            <paramref name="clavePrestador"/> (CambioClaveUserRequest) has prestador values to change the password
+            <response code="200">
+                Accepted:
+                - Operation successful.
+            </response>
+            <response code="409">
+               Failed:
+                - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>The generic Response format with the operation result</returns>
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.PrestadoresController.UpdatePrestador(UCABPagaloTodoMS.Application.Requests.PrestadorRequest,System.String)">
+            <summary>
+                Endpoint to update prestadores
+            </summary>
+            <remarks>
+                ## Description
+                    Patch Prestadores
+                ## Url
+                    Patch /Prestadores/UpdatePrestador
+            </remarks>
+            <response code="200">
+                Accepted:
+                    - Operation successful.
+            </response>
+            <response code="409">
+                Failed:
+                    - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>Returns a generic Response with the result of the operation</returns>
+            
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.PrestadoresController.ConsultaServiciosPorPrest(System.String)">
+            <summary>
+                Endpoint to consult Servicios
+            </summary>
+            <remarks>
+                ## Description
+                    Get Servicios
+                ##Url
+                    GET /Servicios/ConsultServicios
+            <paramref name="username"/> (string) optional value, indicates the user to be consult
+            </remarks>
+            <response code="200">
+                Accepted:
+                    - Operation successful.
+                    - If _username is null, throw exception
+                      If _servicio is not null, just service's de prestador
+            </response>
+            <response code="400">
+               Failed:
+                - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns> list of ServiciosResponse in the generic Response format</returns>
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.RecuperarClaveController.RecuperarClave(System.String)">
+            <summary>
+                Endpoint recover password
+            </summary>
+            <remarks>
+                ## Description
+                    Put recover password
+                ## Url
+                    PUT /ReccuperarClave/{_username}
+            </remarks>
+            <paramref name="username"/> (string) has username values to recover password
+            <response code="200">
+                Accepted:
+                - Operation successful.
+            </response>
+            <response code="400">
+               Failed:
+                - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>The generic Response format with the operation result</returns>
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.ServiciosController.AgregarServicio(UCABPagaloTodoMS.Application.Requests.ServicioRequest)">
+            <summary>
+                Endpoint to Add a Servicio
+            </summary>
+            <remarks>
+                ## Description
+                    Post Servicio
+                ## Url
+                    POST /Servicios/AñadirServicio
+            </remarks>
+            <paramref name="servicio"/> (ServicioRequest) has servicio values to be add
+            <response code="201">
+                Accepted:
+                    - Operation successful.
+            </response>
+            <response code="400">
+                Failed:
+                    - Operation failure, indicates the type of error and the error's reason.
+            </response>
+            <returns>Returns a generic Response with the result of the operation</returns>
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.ServiciosController.ConsultaServicio(System.String)">
+            <summary>
+                Endpoint to consult Servicios
+            </summary>
+            <remarks>
+                ## Description
+                    Get Servicios
+                ##Url
+                    GET /Servicios/ConsultServicios
+            <paramref name="_servicio"/> (string) optional value, that indicates the servicio to be queried
+            </remarks>
+            <response code="200">
+                Accepted:
+                    - Operation successful.
+                    - If _servicio is null, List of all Servicios
+                      If _servicio is not null, just service's info
+            </response>
+            <response code="404">
+               Failed:
+                - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>list of ServiciosResponse in the generic Response format</returns>
+            
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.ServiciosController.UpdateServicio(UCABPagaloTodoMS.Application.Requests.ServicioRequest)">
+            <summary>
+                Endpoint to update Servicios
+            </summary>
+            <remarks>
+                ## Description
+                    Put Servicios
+                ## Url
+                    PUT /Servicios/UpdateServicio
+            </remarks>
+            <paramref name="_servicio"/> (ServicioRequest) that indicates the servicio to be update
+            <response code="200">
+                Accepted:
+                    - Operation successful.
+            </response>
+            <response code="400">
+               Failed:
+                - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>The generic Response format with the operation result</returns>
+        </member>
+        <member name="M:UCABPagaloTodoMS.Controllers.ServiciosController.UpdateStatusServicio(UCABPagaloTodoMS.Application.Requests.StatusServicioRequest,System.String)">
+            <summary>
+                Endpoint para actualizar el estatus prestadores
+            </summary>
+            <remarks>
+                ## Description
+                    Put Prestadores
+                ## Url
+                    PUT /Prestadores/UpdateStatusPrestador
+            </remarks>
+            <paramref name="_servicio"/> (StatusServicioRequest) indicates the servicio to be update
+            <response code="200">
+                Accepted:
+                    - Operation successful.
+            </response>
+            <response code="400">
+               Failed:
+                - Operation Failed due to Exception,indicates the type of error and the error's reason.
+            </response>
+            <returns>The generic Response format with the operation result</returns>
+        </member>
+    </members>
+</doc>
